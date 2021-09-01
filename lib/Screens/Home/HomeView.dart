@@ -1,5 +1,5 @@
 import 'package:chatapp/Global/Constants.dart';
-import 'package:chatapp/Models/FriendListModel.dart'; 
+import 'package:chatapp/Models/FriendListModel.dart';
 import 'package:chatapp/Widgets/UserWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,15 +21,23 @@ class _HomeViewState extends State<HomeView> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100.0),
         child: Container(
-          height: 45,
-          color: Colors.grey.shade300,
+          decoration: BoxDecoration(
+              border: Border(
+            bottom: BorderSide(
+              color: Colors.grey.shade400,
+              width: 1.0,
+            ),
+          ),
+          color: Colors.grey[350],
+          ),
+          margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+          height: 60,
           child: Row(
             children: [
               Material(
-                color: Colors.grey.shade300, // button color
+                color: Colors.grey[350], // button color
                 child: InkWell(
-                  splashColor:
-                      Colors.grey.shade400, // inkwell color
+                  splashColor: Colors.grey.shade400, // inkwell color
                   child: SizedBox(
                       width: 56,
                       height: 56,
@@ -38,8 +46,7 @@ class _HomeViewState extends State<HomeView> {
                         color: Colors.white,
                         size: 30.0,
                       )),
-                  onTap: () { 
-                  },
+                  onTap: () {},
                 ),
               ),
               Expanded(
@@ -49,25 +56,25 @@ class _HomeViewState extends State<HomeView> {
                         child: Text(
                           "Chat App",
                           style: TextStyle(
-                              fontSize: 20,
-                              color: constants.getColorFromHex("#FFFFFF"), ),
+                            fontSize: 20,
+                            color: constants.getColorFromHex("#FFFFFF"),
+                          ),
                         ),
                       )
                     : TextField(
-                      controller: searchController,
+                        controller: searchController,
                         style: TextStyle(fontSize: 18.0, color: Colors.black54),
                         decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintStyle:
-                                TextStyle(fontSize: 18.0, color: Colors.black54),
+                            hintStyle: TextStyle(
+                                fontSize: 18.0, color: Colors.black54),
                             hintText: 'Enter User ID'),
                       ),
               ),
               Material(
-                color: Colors.grey.shade300, // button color
+                color: Colors.grey[350], // button color
                 child: InkWell(
-                  splashColor:
-                      Colors.grey.shade400, // inkwell color
+                  splashColor: Colors.grey.shade400, // inkwell color
                   child: SizedBox(
                       width: 56,
                       height: 56,
@@ -76,15 +83,15 @@ class _HomeViewState extends State<HomeView> {
                         color: Colors.white,
                         size: 30.0,
                       )),
-                  onTap: () { 
+                  onTap: () {
                     setState(() {
-                      if(searchController.text.toString().isNotEmpty){
+                      if (searchController.text.toString().isNotEmpty) {
                         print(searchController.text.toString());
                         searchController.text = "";
                         isSearchEnabled = !isSearchEnabled;
-                      }else{
+                      } else {
                         isSearchEnabled = !isSearchEnabled;
-                      }                      
+                      }
                     });
                   },
                 ),
@@ -96,26 +103,32 @@ class _HomeViewState extends State<HomeView> {
       backgroundColor: Colors.grey.shade300,
       body: SafeArea(
         child: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints viewportConstraints){
+          builder: (BuildContext context, BoxConstraints viewportConstraints) {
             return SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(
-                maxWidth: MediaQuery.of(context).size.width,
-                minHeight: viewportConstraints.maxHeight,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  
-                  children: [
-                    for(int i=0;i<5;i++)
-                    UserWidget(friendListModel: new FriendListModel(false, "9062544370", "Ejaj Ahamed Laskar", "fcmToken", "uniqueUserID"),)
-                  ],
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: MediaQuery.of(context).size.width,
+                  minHeight: viewportConstraints.maxHeight,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      for (int i = 0; i < 10; i++)
+                        UserWidget(
+                          friendListModel: new FriendListModel(
+                              false,
+                              "9062544370",
+                              "Ejaj Ahamed Laskar",
+                              "fcmToken",
+                              "uniqueUserID"),
+                        )
+                    ],
+                  ),
                 ),
               ),
-            ),
-          );
+            );
           },
         ),
       ),

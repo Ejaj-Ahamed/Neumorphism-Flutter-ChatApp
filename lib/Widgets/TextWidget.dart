@@ -14,25 +14,24 @@ class _TextWidgetState extends State<TextWidget> {
       height: double.infinity,
       width: double.infinity,
       color: Colors.transparent,
-      child: Center(
-        child: Text(widget.text,softWrap: true,
-        overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 40,
-                                  shadows: [
-                                    Shadow(
-                                        offset: Offset(3, 3),
-                                        color: Colors.black38,
-                                        blurRadius: 10),
-                                    Shadow(
-                                        offset: Offset(-3, -3),
-                                        color: Colors.white70,
-                                        blurRadius: 10)
-                                  ],
-                                  color: Colors.white70),
-                            ),
-      ),
+      padding: EdgeInsets.only(top: 15,left: 5),
+      child: Text(widget.text,softWrap: true,
+      overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 40,
+                                shadows: [
+                                  Shadow(
+                                      offset: Offset(3, 3),
+                                      color: Colors.black38,
+                                      blurRadius: 20),
+                                  Shadow(
+                                      offset: Offset(-3, -3),
+                                      color: Colors.white70,
+                                      blurRadius: 10)
+                                ],
+                                color: Colors.white70),
+                          ),
     );
   }
 }

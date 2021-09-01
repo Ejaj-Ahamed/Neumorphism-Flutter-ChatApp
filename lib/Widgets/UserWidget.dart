@@ -19,8 +19,8 @@ class _UserWidgetState extends State<UserWidget> {
     return Center(
       child: Container(
         height: 80,
+        width: MediaQuery.of(context).size.width * 0.90, 
         margin: EdgeInsets.all(5),
-        width: MediaQuery.of(context).size.width * 0.95, 
         alignment: Alignment.centerLeft,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
@@ -37,8 +37,10 @@ class _UserWidgetState extends State<UserWidget> {
             ]),
         child: Material(
           color: Colors.grey.shade300,
+          
           borderRadius: BorderRadius.circular(16),
           child: InkWell(
+            
             borderRadius: BorderRadius.circular(16),
             onTap: (){
               print("object");
