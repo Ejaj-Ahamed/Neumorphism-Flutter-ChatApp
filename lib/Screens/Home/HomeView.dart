@@ -22,14 +22,14 @@ class _HomeViewState extends State<HomeView> {
         preferredSize: Size.fromHeight(100.0),
         child: Container(
           height: 45,
-          color: constants.getColorFromHex("#18A8F9"),
+          color: Colors.grey.shade300,
           child: Row(
             children: [
               Material(
-                color: constants.getColorFromHex("#18A8F9"), // button color
+                color: Colors.grey.shade300, // button color
                 child: InkWell(
                   splashColor:
-                      constants.getColorFromHex("#18A8D0"), // inkwell color
+                      Colors.grey.shade400, // inkwell color
                   child: SizedBox(
                       width: 56,
                       height: 56,
@@ -55,19 +55,19 @@ class _HomeViewState extends State<HomeView> {
                       )
                     : TextField(
                       controller: searchController,
-                        style: TextStyle(fontSize: 18.0, color: Colors.white),
+                        style: TextStyle(fontSize: 18.0, color: Colors.black54),
                         decoration: InputDecoration(
                             border: InputBorder.none,
                             hintStyle:
-                                TextStyle(fontSize: 18.0, color: Colors.white),
+                                TextStyle(fontSize: 18.0, color: Colors.black54),
                             hintText: 'Enter User ID'),
                       ),
               ),
               Material(
-                color: constants.getColorFromHex("#18A8F9"), // button color
+                color: Colors.grey.shade300, // button color
                 child: InkWell(
                   splashColor:
-                      constants.getColorFromHex("#18A8D0"), // inkwell color
+                      Colors.grey.shade400, // inkwell color
                   child: SizedBox(
                       width: 56,
                       height: 56,
@@ -80,6 +80,7 @@ class _HomeViewState extends State<HomeView> {
                     setState(() {
                       if(searchController.text.toString().isNotEmpty){
                         print(searchController.text.toString());
+                        searchController.text = "";
                         isSearchEnabled = !isSearchEnabled;
                       }else{
                         isSearchEnabled = !isSearchEnabled;

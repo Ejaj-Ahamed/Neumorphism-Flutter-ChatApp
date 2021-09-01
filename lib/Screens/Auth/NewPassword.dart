@@ -148,7 +148,7 @@ class _NewPasswordState extends State<NewPassword> {
                                       child: InkWell(
                                         borderRadius: BorderRadius.circular(16),
                                         onTap: () {
-                                          Get.offNamedUntil("/Login", (route) => false);
+                                          Get.offNamedUntil("/login", (route) => false);
                                           print("Login called");
                                         },
                                         child: Center(
