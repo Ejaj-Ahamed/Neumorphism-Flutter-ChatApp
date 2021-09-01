@@ -110,7 +110,7 @@ class _OTPVerifyState extends State<OTPVerify> {
                                         },
                                         child: Center(
                                           child: Text(
-                                            "VERIFY OPT",
+                                            "VERIFY OTP",
                                             style: TextStyle(fontSize: 20),
                                           ),
                                         ),
