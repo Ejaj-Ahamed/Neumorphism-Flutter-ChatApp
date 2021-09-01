@@ -178,11 +178,11 @@ class _RegisterState extends State<Register> {
                                         borderRadius: BorderRadius.circular(16),
                                         onTap: () {
                                           Get.toNamed('/home');
-                                          print("Login called");
+                                          print("Register called");
                                         },
                                         child: Center(
                                           child: Text(
-                                            "Login",
+                                            "Register",
                                             style: TextStyle(fontSize: 20),
                                           ),
                                         ),

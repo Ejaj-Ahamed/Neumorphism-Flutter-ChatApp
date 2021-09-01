@@ -37,10 +37,15 @@ class _NewPasswordState extends State<NewPassword> {
                             children: [
                               Align(
                                 alignment: Alignment.center,
-                                child: Text(
-                                  'Enter New Password',
-                                  style: TextStyle(
-                                      fontSize: 35, fontWeight: FontWeight.bold),
+                                child: Container(
+                                  width:MediaQuery.of(context).size.width,
+                                  child: Center(
+                                    child: Text(
+                                      'New Password',
+                                      style: TextStyle(
+                                          fontSize: 35, fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
                                 ),
                               ), 
                               Padding(padding: EdgeInsets.all(5.0)),
@@ -153,7 +158,7 @@ class _NewPasswordState extends State<NewPassword> {
                                         },
                                         child: Center(
                                           child: Text(
-                                            "Change Password",
+                                            "CHANGE",
                                             style: TextStyle(fontSize: 20),
                                           ),
                                         ),
